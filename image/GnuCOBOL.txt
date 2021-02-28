@@ -1,0 +1,24 @@
+https://hub.docker.com/r/olegkunitsyn/gnucobol
+
+
+docker pull olegkunitsyn/gnucobol
+
+
+A GnuCOBOL image to debug or execute COBOL code. You may use it standalone or together with COBOL Debugger extension for VS Code.
+Includes
+
+    GnuCOBOL
+    GNU Debugger
+    Cobolget Package Manager
+
+Usage
+
+Start the container and share your working directory
+
+docker run -d -i --name gnucobol -w ${workspaceRoot} -v ${workspaceRoot}:${workspaceRoot} olegkunitsyn/gnucobol:3.1-dev
+
+Check the versions
+
+docker exec -i gnucobol cobc -V
+docker exec -i gnucobol gdb -v
+docker exec -i gnucobol cobolget -v

@@ -1,0 +1,21 @@
+https://hub.docker.com/r/olegkunitsyn/opencobol
+
+docker pull olegkunitsyn/opencobol
+
+
+An OpenCOBOL image to debug or execute COBOL code. You may use it standalone or together with COBOL Debugger extension for VS Code.
+Includes
+
+    OpenCOBOL
+    GNU Debugger
+
+Usage
+
+Start the container and share your working directory
+
+docker run -d -i --name opencobol -w ${workspaceRoot} -v ${workspaceRoot}:${workspaceRoot} olegkunitsyn/opencobol:1.1
+
+Check the versions
+
+docker exec -i opencobol cobc -V
+docker exec -i opencobol gdb -v
